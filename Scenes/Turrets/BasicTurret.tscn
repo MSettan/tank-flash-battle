@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://mun143n4llpe"]
+
+[ext_resource type="PackedScene" uid="uid://75tltgsr7pmx" path="res://Meshes/Turrets/BasicTurret.blend" id="1_yh5uf"]
+
+[node name="Turret" type="Node3D" unique_id=377355246]
+
+[node name="BasicTurret" parent="." unique_id=1881804391 instance=ExtResource("1_yh5uf")]
+
+[node name="GunMount" type="Marker3D" parent="BasicTurret" unique_id=391072312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09316555, 0.41598046)

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cerbebkwpp7ab"]
+
+[ext_resource type="PackedScene" uid="uid://do7lut7c335or" path="res://Meshes/Guns/Gun_Basic.blend" id="1_b8sea"]
+
+[node name="Gun" type="Node3D" unique_id=420199537]
+
+[node name="Gun_Basic" parent="." unique_id=2050702183 instance=ExtResource("1_b8sea")]
+
+[node name="MuzzlePoint" type="Marker3D" parent="Gun_Basic" unique_id=801202133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005888911, 0, 0.46738532)
