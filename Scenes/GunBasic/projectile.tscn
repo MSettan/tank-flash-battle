@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cwlf3tgc3teky"]
+
+[ext_resource type="Script" uid="uid://bcr7404oq8frt" path="res://Scripts/projectile.gd" id="1_clkc3"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
+radius = 0.1
+height = 0.1
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_clkc3"]
+
+[node name="Projectile" type="Area3D" unique_id=1022883885]
+script = ExtResource("1_clkc3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1000976335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.62896895, 0, 0, 0)
+mesh = SubResource("SphereMesh_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=678195647]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 0, 0)
+shape = SubResource("SphereShape3D_clkc3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

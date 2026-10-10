@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	var move_input := Input.get_axis("move_forward", "move_backward")
 	var turn_input := Input.get_axis("turn_left", "turn_right")
 	
-	rotation.y += turn_input * rotation_speed * delta
+	rotation.y -= turn_input * rotation_speed * delta
 	
 	var forward = -transform.basis.z
 	

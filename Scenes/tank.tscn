@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://ci6brwt51pwxo" path="res://Scenes/Hulls/hull_basic.tscn" id="1_0ys04"]
 [ext_resource type="Script" uid="uid://cmw2sf5cu3qbo" path="res://Scripts/tank.gd" id="1_7f80w"]
-[ext_resource type="PackedScene" uid="uid://75tltgsr7pmx" path="res://Meshes/Turrets/BasicTurret.blend" id="2_r30pj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yh5uf"]
 size = Vector3(1, 0.70947266, 1.8380127)
@@ -13,8 +12,6 @@ script = ExtResource("1_7f80w")
 [node name="HullMount" type="Node3D" parent="." unique_id=1291214425]
 
 [node name="Hull" parent="HullMount" unique_id=70751554 instance=ExtResource("1_0ys04")]
-
-[node name="BasicTurret" parent="HullMount/Hull/Turret_Position" parent_id_path=PackedInt32Array(70751554, 263453143) index="0" unique_id=1881804391 instance=ExtResource("2_r30pj")]
 
 [node name="TankCollision" type="CollisionShape3D" parent="." unique_id=458236232]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3552246, 0.0947876)

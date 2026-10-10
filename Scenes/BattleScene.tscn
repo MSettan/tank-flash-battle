@@ -9,9 +9,6 @@ data = PackedVector3Array(-11, -2, 11, -11, -1, -11, -11, -1, 11, -11, -2, 11, -
 
 [node name="Battle_Map" type="Node3D" unique_id=291135832]
 
-[node name="Tank" parent="." unique_id=42554112 instance=ExtResource("3_ahap6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.537371, 1.7668552, -2.9422011)
-
 [node name="Scenes" parent="." unique_id=668996708 instance=ExtResource("1_12f34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015426636, 0, 0.009177685)
 
@@ -20,9 +17,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015426636, 0, 0.009177685)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scenes/StaticBody3D" unique_id=160379154]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("ConcavePolygonShape3D_b2eky")
-
-[node name="CameraRig" parent="." unique_id=2114909825 instance=ExtResource("3_b2eky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.080945, 0, -0.86667204)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=202559686]
 transform = Transform3D(1, 0, 0, 0, 0.72111255, 0.6928179, 0, -0.6928179, 0.72111255, 0, 0, 0)
@@ -34,5 +28,14 @@ shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 6.015
 shadow_blur = 4.395
+directional_shadow_mode = 0
+directional_shadow_split_3 = 1.0
+directional_shadow_blend_splits = true
+
+[node name="Tank" parent="." unique_id=42554112 instance=ExtResource("3_ahap6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.5737, -4.7683716e-07, -1.5690174)
+
+[node name="CameraRig" parent="Tank" unique_id=2114909825 instance=ExtResource("3_b2eky")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.57990265, 4.7683716e-07, -1.3209287)
 
 [editable path="Scenes"]

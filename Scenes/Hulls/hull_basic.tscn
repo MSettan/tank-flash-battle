@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://ev3yd3jy5vky" path="res://Meshes/Hulls/BasicHull.blend" id="1_scnd6"]
 [ext_resource type="PackedScene" uid="uid://mun143n4llpe" path="res://Scenes/Turrets/BasicTurret.tscn" id="2_brkdp"]
-[ext_resource type="PackedScene" uid="uid://cerbebkwpp7ab" path="res://Scenes/GunBasic/GunBasic.tscn" id="3_h1ek5"]
 
 [node name="Hull" type="Node3D" unique_id=70751554]
 
@@ -12,7 +11,3 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4912218, 0.24852416)
 
 [node name="Turret" parent="Turret_Position" unique_id=377355246 instance=ExtResource("2_brkdp")]
-
-[node name="Gun" parent="Turret_Position/Turret/BasicTurret/GunMount" parent_id_path=PackedInt32Array(377355246, 391072312) index="0" unique_id=420199537 instance=ExtResource("3_h1ek5")]
-
-[editable path="Turret_Position/Turret"]

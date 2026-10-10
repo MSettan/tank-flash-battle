@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cerbebkwpp7ab"]
+
+[ext_resource type="PackedScene" uid="uid://do7lut7c335or" path="res://Meshes/Guns/Gun_Basic.blend" id="1_b8sea"]
+[ext_resource type="Script" uid="uid://c7bkt1r48lm7a" path="res://Scripts/gun.gd" id="1_xq8wt"]
+[ext_resource type="PackedScene" uid="uid://cwlf3tgc3teky" path="res://Scenes/GunBasic/projectile.tscn" id="2_1qmph"]
+
+[node name="Gun" type="Node3D" unique_id=420199537]
+script = ExtResource("1_xq8wt")
+projectile_scene = ExtResource("2_1qmph")
+
+[node name="Gun_Basic" parent="." unique_id=2050702183 instance=ExtResource("1_b8sea")]
+
+[node name="MuzzlePoint" type="Marker3D" parent="Gun_Basic" unique_id=801202133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005888911, 0, 0.46738532)

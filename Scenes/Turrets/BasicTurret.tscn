@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://mun143n4llpe"]
 
+[ext_resource type="Script" uid="uid://daa0onw4xvx70" path="res://Scripts/turret.gd" id="1_x2qnw"]
 [ext_resource type="PackedScene" uid="uid://75tltgsr7pmx" path="res://Meshes/Turrets/BasicTurret.blend" id="1_yh5uf"]
+[ext_resource type="PackedScene" uid="uid://cerbebkwpp7ab" path="res://Scenes/GunBasic/GunBasic.tscn" id="3_7ujva"]
 
 [node name="Turret" type="Node3D" unique_id=377355246]
+script = ExtResource("1_x2qnw")
 
 [node name="BasicTurret" parent="." unique_id=1881804391 instance=ExtResource("1_yh5uf")]
 
 [node name="GunMount" type="Marker3D" parent="BasicTurret" unique_id=391072312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09316555, 0.41598046)
+
+[node name="Gun" parent="BasicTurret/GunMount" unique_id=420199537 instance=ExtResource("3_7ujva")]
