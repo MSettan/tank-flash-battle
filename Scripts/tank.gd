@@ -3,9 +3,6 @@ extends CharacterBody3D
 const move_speed = 5.0
 const rotation_speed = 2
 
-
-	
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -20,8 +17,16 @@ func _physics_process(delta: float) -> void:
 	
 	var forward = -transform.basis.z
 	
-	velocity.x = forward.x * move_input * move_speed
+	velocity.x = forward.x * move_input * move_speed 
 	velocity.z = forward.z * move_input * move_speed
 	
 
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		if collider.is_in_group("enemies"):
+			var push_direction = -collision.get_normal()
+			collider.push(push_direction, 5.0)
