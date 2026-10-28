@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dx2rneioj5yal" path="res://Scripts/enemy.gd" id="1_hghv2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
-size = Vector3(1, 2.2634277, 1)
+size = Vector3(1, 2.6151123, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(0.6879883, 0.9634094, 0.5671387)
+size = Vector3(0.6879883, 1.1257973, 1.6081543)
 
 [node name="Enemy" type="CharacterBody3D" unique_id=954825302 groups=["enemies"]]
 collision_layer = 4
@@ -14,9 +14,16 @@ collision_mask = 7
 script = ExtResource("1_hghv2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2059005547]
-transform = Transform3D(0.65520954, 0, 0, 0, 0.42674983, 0, 0, 0, 0.58906215, 0, 0.63755065, 0)
+transform = Transform3D(0.65520954, 0, 0, 0, 0.42674983, 0, 0, 0, 1.58809, 0, 0.56251, 0)
 mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1693323949]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 0.63498294, 0.0015878081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 0.553789, 0.00622648)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=579863217]
+path_desired_distance = 0.5
+
+[node name="NavigationTimer" type="Timer" parent="." unique_id=937455239]
+
+[connection signal="timeout" from="NavigationTimer" to="." method="_on_navigation_timer_timeout"]
