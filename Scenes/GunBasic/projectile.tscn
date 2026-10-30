@@ -11,6 +11,7 @@ rings = 4
 [sub_resource type="SphereShape3D" id="SphereShape3D_clkc3"]
 
 [node name="Projectile" type="Area3D" unique_id=1022883885]
+collision_mask = 4
 script = ExtResource("1_clkc3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1000976335]

@@ -2,8 +2,12 @@ extends CharacterBody3D
 
 @export var move_speed: float = 3.0 
 @export var player: CharacterBody3D
-@export var mass: float = 3.0 
 @export var rotation_speed: float = 90.0 
+@export_range(0.5, 20.0, 0.5) var mass: float = 1.0 
+@export var max_push_speed: float = 5.0
+@export var max_health: float = 50.0
+
+var health: float
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var navigation_timer: Timer = $NavigationTimer
@@ -11,10 +15,18 @@ extends CharacterBody3D
 var push_velocity: Vector3 = Vector3.ZERO
 
 func push(direction: Vector3, force: float) -> void:
-	push_velocity = direction * force
+	push_velocity = direction * (force/mass)
+	push_velocity = push_velocity.limit_length(max_push_speed)
+	
+func take_damage(amount: float) -> void:
+	health -= amount
+	print("Ememy health: ", health)
+	if health<=0:
+		queue_free()
 	
 func _ready() -> void:
 	navigation_timer.start(randf_range(0.5, 1))
+	health = max_health
 	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
